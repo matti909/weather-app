@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import type { Ref } from 'vue';
-import { onMounted, ref } from 'vue';
+import type { Ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import WeatherReport from './WeatherReport.vue'
 
 type Geolocation = {
   latitude: number
@@ -29,6 +30,6 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="coords && !geolocationBlockedByUser">{{ coords.latitude }} {{ coords.longitude }}</div>
+  <WeatherReport v-if="coords && !geolocationBlockedByUser" :coords="coords" />
   <div v-if="geolocationBlockedByUser">User denied access</div>
 </template>
