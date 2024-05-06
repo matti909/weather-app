@@ -19,7 +19,10 @@ const removePlace = (placeName) => {
 </script>
 
 <template>
-  <div class="relative gap-6 p-10 mb-6 overflow-hidden text-white bg-blue-300 rounded-lg shadow-lg">
+  <div
+    :class="place.current.is_day === 1 ? 'bg-day' : 'bg-night'"
+    class="relative gap-6 p-10 mb-6 overflow-hidden text-white rounded-lg shadow-lg"
+  >
     <!-- Location & time -->
     <div class="flex items-center justify-between mb-2">
       <div class="flex items-center gap-2">
@@ -80,6 +83,15 @@ const removePlace = (placeName) => {
 </template>
 
 <style scoped>
+.bg-day {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+}
+.bg-night {
+  background-color: #07223d;
+  background-image: linear-gradient(62deg, #0a2a4a 0%, #270845 100%);
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
