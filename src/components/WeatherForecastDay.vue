@@ -15,7 +15,7 @@ defineProps({
 
         <!-- icon -->
         <td class="w-1/3">
-          <img src="" alt="icon" width="30" class="mx-auto" />
+          <img :src="day.day.condition.icon" alt="icon" width="30" class="mx-auto" />
         </td>
 
         <!-- high/low temp -->
